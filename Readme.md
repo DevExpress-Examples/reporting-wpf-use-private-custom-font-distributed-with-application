@@ -1,3 +1,9 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [MainWindow.xaml](./CS/PrivateFontDemo/MainWindow.xaml)
+* **[MainWindow.xaml.cs](./CS/PrivateFontDemo/MainWindow.xaml.cs)**
+<!-- default file list end -->
 # How to display a report that uses a private (embedded) font in a DocumentPreview
 
 
