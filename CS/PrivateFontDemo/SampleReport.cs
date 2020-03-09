@@ -7,52 +7,60 @@ using DevExpress.XtraReports.UI;
 
 namespace PrivateFontDemo {
     public class SampleReport : XtraReport {
-        private TopMarginBand topMarginBand1;
-        private DetailBand detailBand1;
-        public XRLabel xrLabel1;
-        private BottomMarginBand bottomMarginBand1;
-    
+        private DetailBand Detail;
+        private XRLabel lbText;
+        private TopMarginBand TopMargin;
+        private BottomMarginBand BottomMargin;
+
         public SampleReport() {
-            InitializeComponent();
+            InitializeComponent();            
         }
 
         private void InitializeComponent() {
-            this.topMarginBand1 = new DevExpress.XtraReports.UI.TopMarginBand();
-            this.detailBand1 = new DevExpress.XtraReports.UI.DetailBand();
-            this.xrLabel1 = new DevExpress.XtraReports.UI.XRLabel();
-            this.bottomMarginBand1 = new DevExpress.XtraReports.UI.BottomMarginBand();
+            this.Detail = new DevExpress.XtraReports.UI.DetailBand();
+            this.TopMargin = new DevExpress.XtraReports.UI.TopMarginBand();
+            this.BottomMargin = new DevExpress.XtraReports.UI.BottomMarginBand();
+            this.lbText = new DevExpress.XtraReports.UI.XRLabel();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             // 
-            // topMarginBand1
+            // Detail
             // 
-            this.topMarginBand1.Name = "topMarginBand1";
+            this.Detail.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
+            this.lbText});
+            this.Detail.Name = "Detail";
+            this.Detail.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.Detail.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
-            // detailBand1
+            // TopMargin
             // 
-            this.detailBand1.Controls.AddRange(new DevExpress.XtraReports.UI.XRControl[] {
-            this.xrLabel1});
-            this.detailBand1.Name = "detailBand1";
+            this.TopMargin.Name = "TopMargin";
+            this.TopMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.TopMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
-            // xrLabel1
+            // BottomMargin
             // 
-            this.xrLabel1.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 10.00001F);
-            this.xrLabel1.Name = "xrLabel1";
-            this.xrLabel1.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
-            this.xrLabel1.SizeF = new System.Drawing.SizeF(629.9999F, 38.625F);
-            this.xrLabel1.StylePriority.UseFont = false;
-            this.xrLabel1.Text = "This Label should be printed in Arial Narrow font.";
+            this.BottomMargin.Name = "BottomMargin";
+            this.BottomMargin.Padding = new DevExpress.XtraPrinting.PaddingInfo(0, 0, 0, 0, 100F);
+            this.BottomMargin.TextAlignment = DevExpress.XtraPrinting.TextAlignment.TopLeft;
             // 
-            // bottomMarginBand1
+            // lbText
             // 
-            this.bottomMarginBand1.Name = "bottomMarginBand1";
+            this.lbText.LocationFloat = new DevExpress.Utils.PointFloat(10.00001F, 10.00001F);
+            this.lbText.Name = "lbText";
+            this.lbText.Padding = new DevExpress.XtraPrinting.PaddingInfo(2, 2, 0, 0, 100F);
+            this.lbText.SizeF = new System.Drawing.SizeF(630F, 79.99999F);
+            this.lbText.StylePriority.UseFont = false;
+            this.lbText.StylePriority.UseTextAlignment = false;
+            this.lbText.Text = "Hello World";
+            this.lbText.TextAlignment = DevExpress.XtraPrinting.TextAlignment.MiddleCenter;
             // 
             // SampleReport
             // 
             this.Bands.AddRange(new DevExpress.XtraReports.UI.Band[] {
-            this.topMarginBand1,
-            this.detailBand1,
-            this.bottomMarginBand1});
-            this.Version = "14.1";
+            this.Detail,
+            this.TopMargin,
+            this.BottomMargin});
+            this.Version = "18.2";
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
 
         }

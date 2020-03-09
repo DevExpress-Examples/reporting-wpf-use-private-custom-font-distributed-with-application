@@ -3,14 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         Title="MainWindow" Height="600" Width="800">
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="auto" />
-            <RowDefinition Height="*" />
-        </Grid.RowDefinitions>
-        <StackPanel>
-            <Button Name="createDocument" Content="Build Report" Click="createDocument_Click" />
-            <CheckBox Content="Use XamlExport.FontResolver" Name="useFontResolver" IsChecked="True" />
-        </StackPanel>
-        <dxp:DocumentPreview Name="preview" Grid.Row="1" />
+        <dxp:DocumentPreviewControl Name="preview" />
     </Grid>
 </Window>
