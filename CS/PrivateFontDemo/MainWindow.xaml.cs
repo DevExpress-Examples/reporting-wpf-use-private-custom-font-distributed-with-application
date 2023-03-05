@@ -1,7 +1,8 @@
-﻿using System.Drawing;
+using System.Drawing;
 using System.Drawing.Text;
 using System.Linq;
 using System.Windows;
+using DevExpress.Drawing;
 using DevExpress.Utils.Serializing;
 using DevExpress.XtraPrinting.Caching;
 
@@ -11,8 +12,9 @@ namespace PrivateFontDemo {
     /// </summary>
     public partial class MainWindow : Window {
         static MainWindow() {
-            PrintingSystemXmlSerializer.UnregisterConverter(typeof(Font));
-            PrintingSystemXmlSerializer.RegisterConverter(new CustomFontConverter());
+            string fontFilePath = "Fonts/MissFajardose-Regular.ttf";
+            byte[] fontData = System.IO.File.ReadAllBytes(fontFilePath);
+            DXFontRepository.Instance.AddFont(fontData);
         }
 
 
@@ -23,7 +25,7 @@ namespace PrivateFontDemo {
 
         void MainWindow_Loaded(object sender, RoutedEventArgs e) {
             var report = new SampleReport();
-            report.Font = new Font(CustomFontsHelper.GetFamily("Miss Fajardose"), 48F, System.Drawing.FontStyle.Regular, GraphicsUnit.Point);
+            report.Font = new DXFont("Miss Fajardose", 48F, DXFontStyle.Regular, DXGraphicsUnit.Point);
 
             var cachedReportSource = new CachedReportSource(report, new MemoryDocumentStorage());
             preview.DocumentSource = cachedReportSource;

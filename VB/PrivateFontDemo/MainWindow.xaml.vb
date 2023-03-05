@@ -1,6 +1,7 @@
 Imports System.Drawing
 Imports System.Drawing.Text
 Imports System.Windows
+Imports DevExpress.Drawing
 Imports DevExpress.Utils.Serializing
 Imports DevExpress.XtraPrinting.Caching
 
@@ -13,8 +14,9 @@ Namespace PrivateFontDemo
         Inherits Window
 
         Shared Sub New()
-            Call PrintingSystemXmlSerializer.UnregisterConverter(GetType(Font))
-            Call PrintingSystemXmlSerializer.RegisterConverter(New CustomFontConverter())
+            Dim fontFilePath As String = "Fonts/MissFajardose-Regular.ttf"
+            Dim fontData() As Byte = System.IO.File.ReadAllBytes(fontFilePath)
+            DXFontRepository.Instance.AddFont(fontData)
         End Sub
 
         Public Sub New()
@@ -24,7 +26,7 @@ Namespace PrivateFontDemo
 
         Private Sub MainWindow_Loaded(ByVal sender As Object, ByVal e As RoutedEventArgs)
             Dim report = New SampleReport()
-            report.Font = New Font(GetFamily("Miss Fajardose"), 48F, System.Drawing.FontStyle.Regular, GraphicsUnit.Point)
+            report.Font = New DXFont("Miss Fajardose", 48.0F, DXFontStyle.Regular, DXGraphicsUnit.Point)
             Dim cachedReportSource = New CachedReportSource(report, New MemoryDocumentStorage())
             Me.preview.DocumentSource = cachedReportSource
             cachedReportSource.CreateDocumentAsync()
