@@ -4,7 +4,7 @@
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
 <!-- default badges end -->
-# Reporting for WPF - How to Use a Custom Font Distributed With the Application
+# Reporting for WPF - How to Use a Custom Font Distributed with the Application
 
 The main idea of this approach is to use the [DXFontRepository](https://docs.devexpress.com/CoreLibraries/DevExpress.Drawing.DXFontRepository) instance to store custom fonts. The report constructor creates a new font and a [XRControlStyle](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XRControlStyle) report style based on the newly created font. The new custom style is added to the [XtraReport.StyleSheet](https://docs.devexpress.com/XtraReports/DevExpress.XtraReports.UI.XtraReport.StyleSheet) collection.
 
@@ -30,3 +30,4 @@ The main idea of this approach is to use the [DXFontRepository](https://docs.dev
 
 (you will be redirected to DevExpress.com to submit your response)
 <!-- feedback end -->
+
