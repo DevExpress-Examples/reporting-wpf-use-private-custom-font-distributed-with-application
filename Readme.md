@@ -24,7 +24,7 @@ The main idea of this approach is to use the [DXFontRepository](https://docs.dev
 
 - [Reporting for Web - How to Use a Custom Font Distributed With the Application](https://github.com/DevExpress-Examples/reporting-use-a-custom-font-distributed-with-the-application)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=reporting-wpf-use-private-custom-font-distributed-with-application&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=reporting-wpf-use-private-custom-font-distributed-with-application&~~~was_helpful=no)
 
